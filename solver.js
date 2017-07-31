@@ -110,7 +110,7 @@ function checkBoard(solution)
 	return true;
 }
 
-function bruteForce(board)
+function bruteForce(board, returnFirst)
 {
 	if(board.width === undefined) throw "no width provided";
 	var cageAnswers = board.cages.map((c) => findPossibleAnswers(c, board.width));
@@ -124,6 +124,8 @@ function bruteForce(board)
 			for(var i = 0; i < cageAnswers[p].length; i++)
 			{
 				checkCages(a.concat([cageAnswers[p][i]]), p + 1);
+				if(returnFirst && possibleBoards.length > 0)
+					return possibleBoards;
 			}
 
 			return;
@@ -168,7 +170,8 @@ function drawBoard(board)
 
 var n = parseInt(process.argv[2], 10);
 console.log("solving " + n);
-var solutions = bruteForce(boards[n]);
+var returnFirst = process.argv[3] == "first";
+var solutions = bruteForce(boards[n], returnFirst);
 if(solutions.length > 0)
 {
 	solutions.forEach((s) => {
