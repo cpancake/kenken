@@ -19,7 +19,7 @@ defmodule Ops do
 		a / b
 	end
 
-	def apply(op, a, b) when op == "/" and b > a do
+	def apply(op, a, b) when op == "/" do
 		b / a
 	end
 

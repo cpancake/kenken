@@ -13,7 +13,6 @@ defmodule Board do
 
 	def check_column(solution, size, i, j, used) do
 		if Enum.member?(used, solution[i * size + j]) do
-			IO.puts "col failed: #{j},#{i}"
 			false
 		else
 			check_column(solution, size, i + 1, j, [solution[i * size + j] | used])
@@ -32,7 +31,6 @@ defmodule Board do
 
 	def check_row(solution, size, i, j, used) do
 		if Enum.member?(used, solution[i * size + j]) do
-			IO.puts "row failed: #{j},#{i}"
 			false
 		else
 			check_row(solution, size, i, j + 1, [solution[i * size + j] | used])

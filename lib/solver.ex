@@ -49,7 +49,6 @@ defmodule Solver do
 
 	def check_cages(rf, size, cos, cages, prev, solutions) when length(cages) == 0 do
 		board = fill_board(size, cos, Enum.reverse(prev))
-		IO.inspect board
 		if Board.check_board(board, size) do
 			[board|solutions]
 		else
@@ -62,13 +61,14 @@ defmodule Solver do
 	end
 
 	@doc """
-	Solves the given board. Returns tuple {:ok, solutions} or {:error}
+	Solves the given board. Returns list of solutions
 	"""
 	def solve(board, return_first) do
 		cages = 
 			board.cages |>
 			Enum.map(fn c -> Cage.find_possible_answers(c, board.width) end)
 
-		check_cages(return_first, board.width, board.cages, cages, [], [])
+		check_cages(return_first, board.width, board.cages, cages, [], []) |>
+		Enum.map(fn s -> Array.to_list(s) end)
 	end
 end
