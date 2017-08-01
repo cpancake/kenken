@@ -17,8 +17,7 @@ defmodule Cage do
 		check_cage_answer(cage, tl(answer), hd(answer))
 	end
 
-	def permute(n, max, i, prev, permutations) 
-		when i > max do
+	def permute(_n, max, i, _prev, permutations) when i > max do
 		permutations
 	end
 
