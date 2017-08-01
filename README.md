@@ -4,11 +4,11 @@ It solves [KenKen puzzles](https://en.wikipedia.org/wiki/KenKen). That's all it 
 
 Puzzles are input via boards.js as a list of cages. The top left square is 1, the one to the right of it is 2, etc. So a cage in a 3x3 KenKen board that forms an L shape to the left would be 1,4,7,8. 
 
-To solve a puzzle, run `solver.js` with the index of the puzzle you want solved:
-`node solver.js 3`
+To solve a puzzle, run `KenKen` with the index of the puzzle you want solved:
+`mix run -e KenKen.init 0`
 
 If you don't want it to return every possible solution, add `first` to the end:
-`node solver.js 3 first`
+`mix run -E KenKen.init 0 first`
 
 ## how it works
 
