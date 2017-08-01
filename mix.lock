@@ -1,0 +1,2 @@
+%{"array": {:git, "https://github.com/jfacorro/elixir-array.git", "f248f9d257da2c703c469da05ca88206a7e6c15d", []},
+  "combination": {:hex, :combination, "0.0.3", "746aedca63d833293ec6e835aa1f34974868829b1486b1e1cb0685f0b2ae1f41", [:mix], []}}
