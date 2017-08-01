@@ -16,5 +16,4 @@ First, it generates the possible answers for every cage (for example, for a two 
 
 ## todo
 
-* rewrite in elixir
 * find a better way to input puzzles
